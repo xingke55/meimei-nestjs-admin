@@ -27,6 +27,8 @@ export class LoginController {
   @Public()
   @UseGuards(LocalAuthGuard)
   async login(@Body() reqLoginDto: ReqLoginDto, @Req() req: Request): Promise<ResLoginDto> {
+    console.log(reqLoginDto)
+
     return await this.loginService.login(req)
   }
 

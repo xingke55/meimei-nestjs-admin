@@ -2,14 +2,13 @@ import Decimal from 'decimal.js'
 import axios from 'axios'
 import { CronTime } from 'cron'
 
-
 Decimal.set({ toExpNeg: -100, toExpPos: 100 })
 
 export const toDecimal = (val) => {
   return new Decimal(val)
 }
 
-export {  Decimal, axios }
+export { Decimal, axios }
 
 // Env
 export const env = {

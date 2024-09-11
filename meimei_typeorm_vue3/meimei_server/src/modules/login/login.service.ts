@@ -40,6 +40,8 @@ export class LoginService {
 
   /* 创建验证码图片 */
   async createImageCaptcha() {
+    console.log('createImageCaptcha')
+
     const { data, text } = svgCaptcha.createMathExpr({
       // size: 4, //验证码长度
       // ignoreChars: '0o1i', // 验证码字符中排除 0o1i
@@ -59,6 +61,7 @@ export class LoginService {
 
   /* 登录 */
   async login(request: Request) {
+    debugger
     const { user } = request as any
     const payload: Payload = { userId: user.userId, pv: 1 }
     //生成token
